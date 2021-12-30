@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Dependencies and Build
-        working-directory: wordino-web
+        working-directory: dropf-web
         run: |
           npm install
           npm run build
@@ -19,6 +19,6 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_DROPF_COM }}"
-          entryPoint: "./wordino-web"
+          entryPoint: "./dropf-web"
           channelId: live
           projectId: dropf-com
