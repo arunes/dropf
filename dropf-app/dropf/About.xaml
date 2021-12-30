@@ -1,0 +1,96 @@
+﻿<Window x:Class="dropf.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:lang="clr-namespace:dropf"
+        Title="{x:Static lang:Lang.AboutTitle}" Height="350" Width="500" ResizeMode="NoResize" KeyDown="Window_KeyDown" Loaded="Window_Loaded" Icon="/dropf;component/dropf.ico">
+    <Grid>
+        <Canvas>
+            <Image Canvas.Left="0" Canvas.Top="0" Height="98" Name="image1" Stretch="Fill" Width="500" Source="/dropf;component/Images/about.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Label Height="28" HorizontalAlignment="Left" Name="lblVersion" VerticalAlignment="Top" FontSize="9" Canvas.Left="179" Canvas.Top="70" />
+
+            <TabControl Name="tabControl1" Margin="-1,74,-22,33" Width="501" Height="200">
+                <TabItem Header="{x:Static lang:Lang.About}" Name="tabItem1" Margin="1,-2,-3,-1">
+                    <Grid>
+                        <Label Content="{x:Static lang:Lang.BetaTesters}" HorizontalAlignment="Left" Margin="0,70,0,0" Name="label1" Height="28" VerticalAlignment="Top" FontWeight="SemiBold" />
+                        <TextBlock Height="45" HorizontalAlignment="Left" Margin="5,97,0,0" Name="textBlock1" Text="Batuhan Göksu, Berke Keklikoğlu, Canan Üneş, Cem Ulaş Ertuğ, Denizcan Özdemir, Filiz Altıntürk, Mesut Soner Ermiş, Onur Baran, Sinan Avan, Tolga Eğilmezel" VerticalAlignment="Top" Width="457" TextWrapping="Wrap" />
+                        <Label Content="{x:Static lang:Lang.Developer}" Height="28" HorizontalAlignment="Left" Margin="0,6,0,0" Name="label2" VerticalAlignment="Top" FontWeight="SemiBold" />
+                        <Label Content="Ali Rıza Üneş (arunes)" Height="28" HorizontalAlignment="Left" Margin="0,29,0,0" Name="label3" VerticalAlignment="Top" />
+                        <Image Height="92" HorizontalAlignment="Left" Margin="327,203,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="118" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="{x:Static lang:Lang.Translations}" Margin="1,-2,-4,-1">
+                    <Grid>
+                        <ListView Name="listView1" Margin="0,0,6,25" SelectionMode="Single">
+                            <ListViewItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/dropf;component/Images/flag-tr.png" Width="16" Height="16" Margin="0,0,5,0"/>
+                                    <TextBlock>
+                                        <Hyperlink NavigateUri="http://arunes.com" RequestNavigate="Hyperlink_RequestNavigate">Ali Rıza Üneş (arunes)</Hyperlink>
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/dropf;component/Images/flag-uk.png" Width="16" Height="16" Margin="0,0,5,0"/>
+                                    <TextBlock>
+                                        <Hyperlink NavigateUri="http://arunes.com" RequestNavigate="Hyperlink_RequestNavigate">Ali Rıza Üneş (arunes)</Hyperlink>
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/dropf;component/Images/flag-de.png" Width="16" Height="16" Margin="0,0,5,0"/>
+                                    <TextBlock>
+                                        <Hyperlink NavigateUri="http://beatmasters-winlite-blog.de" RequestNavigate="Hyperlink_RequestNavigate">Mike Föllmer (beatmasters)</Hyperlink>
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/dropf;component/Images/flag-ru.png" Width="16" Height="16" Margin="0,0,5,0"/>
+                                    <TextBlock>
+                                        <Hyperlink NavigateUri="http://void.by" RequestNavigate="Hyperlink_RequestNavigate">Dmitry (void.by)</Hyperlink>
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+
+                            <ListViewItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/dropf;component/Images/flag-es.png" Width="16" Height="16" Margin="0,0,5,0"/>
+                                    <TextBlock>
+                                        <Hyperlink NavigateUri="http://adslfaqs.com.ar" RequestNavigate="Hyperlink_RequestNavigate">Daniel Patri (adslfaqs.com.ar)</Hyperlink>
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+
+                            <ListViewItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/dropf;component/Images/flag-pl.png" Width="16" Height="16" Margin="0,0,5,0"/>
+                                    <TextBlock>
+                                        <Hyperlink NavigateUri="#" RequestNavigate="Hyperlink_RequestNavigate">Marcin Małogost</Hyperlink>
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+
+                        </ListView>
+                        <TextBlock Height="20" HorizontalAlignment="Left" Margin="0,143,0,0" Name="textBlock2" VerticalAlignment="Center">
+                            <Hyperlink NavigateUri="http://2d1.in/qmt" RequestNavigate="Hyperlink_RequestNavigate"><TextBlock Text="{x:Static lang:Lang.HelpDropfTranslations}" /></Hyperlink>
+                        </TextBlock>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+
+            <Button Canvas.Left="403" Canvas.Top="288" Content="{x:Static lang:Lang.OK}" Height="23" Name="btnOk" Width="75" Click="btnOk_Click" />
+            <TextBlock Canvas.Left="441" Canvas.Top="7">
+                <Hyperlink NavigateUri="http://facebook.com/dropfcom" RequestNavigate="Hyperlink_RequestNavigate" Foreground="{x:Null}">
+                    <Image Height="27" Name="image3" Stretch="Fill" Width="25" Source="/dropf;component/Images/facebook.png" />
+                </Hyperlink>
+            </TextBlock>
+            <TextBlock Canvas.Left="468" Canvas.Top="7">
+                <Hyperlink NavigateUri="http://twitter.com/dropf" RequestNavigate="Hyperlink_RequestNavigate" Foreground="{x:Null}">
+                    <Image Height="27" Name="image4" Stretch="Fill" Width="25" Source="/dropf;component/Images/twitter.png" />
+                </Hyperlink>
+            </TextBlock>
+        </Canvas>
+    </Grid>
+</Window>

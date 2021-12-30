@@ -1,0 +1,37 @@
+{
+  "name": "dropf-web",
+  "version": "1.0.0",
+  "description": "dropf website",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html --out-dir build",
+    "build": "parcel build src/index.html --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arunes/dropf.git"
+  },
+  "author": "Ali R Unes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arunes/dropf/issues"
+  },
+  "homepage": "https://github.com/arunes/dropf#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-static-files-copy": "^2.0.0",
+    "sass": "^1.18.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-drag-drop-container": "^6.1.1",
+    "react-ga": "^2.5.7",
+    "react-responsive-modal": "^3.6.0",
+    "webfontloader": "^1.6.28"
+  }
+}

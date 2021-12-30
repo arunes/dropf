@@ -1,0 +1,26 @@
+div.content {
+    padding-top: 20px;
+    width      : 1000px;
+    margin     : 0 auto;
+
+    div.specs {
+        font-family: $font-family;
+        text-align : center;
+
+        span {
+            background : #2E81A0 url(/images/icons/tick.png) no-repeat 10px center;
+            text-indent: 24px;
+            font-size  : 1em;
+            padding    : 12px;
+            white-space: nowrap;
+            color      : #fff;
+            display    : inline-block;
+            margin     : 0 7px 7px 0;
+
+            img {
+                margin-left   : 2px;
+                vertical-align: middle;
+            }
+        }
+    }
+}

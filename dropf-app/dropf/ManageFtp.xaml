@@ -1,0 +1,38 @@
+﻿<Window x:Class="dropf.ManageFtp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:lang="clr-namespace:dropf"
+        Title="{x:Static lang:Lang.ManageFtpAccountsTitle}" Height="330" Width="551" ResizeMode="NoResize" Loaded="Window_Loaded" Icon="/dropf;component/dropf.ico">
+    <Grid>
+        <Button Content="{x:Static lang:Lang.OK}" Height="23" HorizontalAlignment="Right" IsDefault="True" Margin="0,264,13,0" Name="btnOk" VerticalAlignment="Top" Width="75" Click="btnOk_Click" TabIndex="11" />
+        <Button Content="{x:Static lang:Lang.Cancel}" Height="23" HorizontalAlignment="Left" IsCancel="True" Margin="12,264,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" TabIndex="12" />
+        <Label Content="{x:Static lang:Lang.Name}" HorizontalAlignment="Left" Margin="155,12,0,0" Name="label6" VerticalAlignment="Top" Padding="4" />
+        <Label Content="{x:Static lang:Lang.Host}" HorizontalAlignment="Left" Margin="155,42,0,0" Name="label1" VerticalAlignment="Top" Padding="4" />
+        <Label Content="{x:Static lang:Lang.HttpUrl}" HorizontalAlignment="Left" Margin="155,72,0,0" Name="label2" VerticalAlignment="Top" Padding="4" />
+        <Label Content="{x:Static lang:Lang.Mode}" HorizontalAlignment="Left" Margin="155,102,0,0" Name="label3" VerticalAlignment="Top" Padding="4" />
+        <Label Content="{x:Static lang:Lang.UserName}" HorizontalAlignment="Left" Margin="155,132,0,0" Name="label4" VerticalAlignment="Top" Padding="4" />
+        <Label Content="{x:Static lang:Lang.Password}" HorizontalAlignment="Left" Margin="155,162,0,0" Name="label5" VerticalAlignment="Top" Padding="4" />
+        <TreeView Height="206" HorizontalAlignment="Left" Margin="10,10,0,0" Name="tvSites" VerticalAlignment="Top" Width="135" KeyDown="tvSites_KeyDown" SelectedItemChanged="tvSites_SelectedItemChanged">
+            <TreeViewItem Header="{x:Static lang:Lang.Sites}" IsSelected="True" />
+        </TreeView>
+        <Button Content="{x:Static lang:Lang.Add}" Height="23" HorizontalAlignment="Left" Margin="10,223,0,0" Name="btnAdd" VerticalAlignment="Top" Width="69" Click="btnAdd_Click" FontSize="11" />
+        <Button Content="{x:Static lang:Lang.Delete}" Height="23" Margin="85,223,0,0" Name="btnDelete" VerticalAlignment="Top" Click="btnDelete_Click" HorizontalAlignment="Left" Width="60" FontSize="11" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="252,14,0,0" Name="txtName" VerticalAlignment="Top" Width="272" TabIndex="0" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="252,44,0,0" Name="txtHost" VerticalAlignment="Top" Width="178" TabIndex="1" />
+        <TextBox Height="23" Margin="252,74,0,0" Name="txtHttpUrl" VerticalAlignment="Top" HorizontalAlignment="Left" Width="178" TabIndex="3" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="252,134,0,0" Name="txtUser" VerticalAlignment="Top" Width="102" TabIndex="6" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="252,194,0,0" Name="txtRootFolder" VerticalAlignment="Top" Width="194" TabIndex="8" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="252,164,0,0" Name="txtPassword" VerticalAlignment="Top" Width="102" TabIndex="7" />
+        <RadioButton Content="{x:Static lang:Lang.Active}" Height="16" HorizontalAlignment="Left" Margin="252,107,0,0" Name="rbModeActive" VerticalAlignment="Top" TabIndex="4" />
+        <RadioButton Content="{x:Static lang:Lang.Passive}" Height="16" HorizontalAlignment="Left" Margin="348,107,0,0" Name="rbModePassive" VerticalAlignment="Top" TabIndex="5" />
+        <Label Content="{x:Static lang:Lang.RootFolder}" HorizontalAlignment="Left" Margin="155,192,0,0" Name="label7" Padding="4" VerticalAlignment="Top" />
+        <Label Content="{x:Static lang:Lang.Port}" HorizontalAlignment="Left" Margin="449,42,0,0" Name="label8" Padding="4" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="485,44,0,0" Name="txtPort" VerticalAlignment="Top" Width="39" TextAlignment="Center" Text="21" TabIndex="2" />
+        <TextBox Height="23" Margin="252,223,0,0" Name="txtUploadFolder" TabIndex="9" VerticalAlignment="Top" HorizontalAlignment="Left" Width="194" />
+        <Label Content="{x:Static lang:Lang.UploadFolder}" HorizontalAlignment="Left" Margin="155,221,0,0" Name="label9" Padding="4" VerticalAlignment="Top" />
+        <Button Content="{x:Static lang:Lang.Check}" Height="23" HorizontalAlignment="Right" Margin="0,264,94,0" Name="btnCheck" VerticalAlignment="Top" Width="87" TabIndex="10" Click="btnCheck_Click" />
+        <Label Height="28" HorizontalAlignment="Right" Margin="0,263,187,0" Name="lblCheckConnection" VerticalAlignment="Top" Visibility="Hidden" HorizontalContentAlignment="Right" />
+        <Button Content="..." HorizontalAlignment="Left" Margin="449,194,0,0" Name="btnBrowseRoot" Width="30" Height="23" VerticalAlignment="Top" />
+        <Button Content="..." Height="23" HorizontalAlignment="Left" Margin="449,222,0,0" Name="btnBrowseUpload" VerticalAlignment="Top" Width="30" />
+    </Grid>
+</Window>

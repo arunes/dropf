@@ -1,0 +1,55 @@
+footer {
+    width     : 1000px;
+    margin    : 0 auto 20px auto;
+    text-align: center;
+
+    nav {
+        margin-top      : 20px;
+        color           : $color-dropf-extra-light;
+        background-color: $color-dropf-dark;
+        padding         : 10px;
+        font-family     : $font-family;
+
+        a {
+            color          : #C7E4EE;
+            font-size      : 1em;
+            text-decoration: none;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        span {
+            margin: 0 5px;
+        }
+    }
+
+    .referrals {
+        margin-top: 20px;
+    }
+
+    .beta {
+        font-family: $font-family;
+        margin-top : 20px;
+        font-size  : 0.7em;
+        color      : #fff;
+    }
+
+    .version {
+        font-family: $font-family;
+        margin-top : 10px;
+        font-size  : 0.7em;
+        color      : #fff;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .author {
+        margin-top : 5px;
+        padding-top: 4px;
+        text-align : center;
+    }
+}

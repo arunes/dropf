@@ -1,0 +1,80 @@
+header {
+    background   : $color-dropf-light url(/images/bg.jpg) no-repeat top center;
+    border-bottom: 1px solid $color-dropf;
+
+    .wrapper {
+        width  : 990px;
+        margin : 0 auto;
+        padding: 35px 0 20px 0;
+
+        div {
+            text-align: center;
+
+            &.slogan {
+                font-family  : $font-family;
+                font-size    : 2.2em;
+                color        : $color-dropf;
+                margin-bottom: 35px;
+            }
+
+            &.columns div {
+                &.column {
+                    width: 330px;
+                    float: left;
+                }
+
+                &.left,
+                &.right {
+                    margin-top: 25px;
+                }
+            }
+
+            &.description {
+                font-family: $font-family;
+                padding    : 0 50px;
+                margin-top : 30px;
+
+                p {
+                    margin    : 0;
+                    text-align: center;
+                    color     : $color-dropf-extra-dark;
+
+                    &.big {
+                        font-size    : 2em;
+                        margin-bottom: 10px;
+                    }
+
+                    &.small {
+                        font-size: 0.9em;
+                    }
+                }
+            }
+        }
+    }
+
+    #icon-setup {
+        width     : 73px;
+        height    : 82px;
+        cursor    : move;
+        margin    : auto;
+        background: url(/images/setup.png) no-repeat;
+    }
+
+    #icon-box {
+        width : 120px;
+        height: 106px;
+        margin: auto;
+
+        &.close {
+            background: url(/images/box-close.png) no-repeat;
+        }
+
+        &.open {
+            background: url(/images/box-open.png) no-repeat;
+        }
+
+        &.hover {
+            background: url(/images/box-hover.png) no-repeat;
+        }
+    }
+}

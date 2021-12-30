@@ -1,0 +1,90 @@
+﻿<Window x:Class="dropf.Drop"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        xmlns:lang="clr-namespace:dropf"
+        xmlns:w="clr-namespace:dropf"
+        Title="dropf" Height="128" Width="128" WindowStyle="None" AllowsTransparency="True" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" AllowDrop="True" Loaded="Window_Loaded" Background="{x:Null}" KeyDown="Window_KeyDown" Deactivated="Window_Deactivated">
+    <Window.ContextMenu>
+        <ContextMenu Opened="ContextMenu_Opened">
+            <MenuItem Name="cmiShowHide" Header="{x:Static lang:Lang.Hide}" Click="cmiShowHide_Click" />
+            <MenuItem Name="cmiCancel" Header="{x:Static lang:Lang.Cancel}" IsEnabled="False" Click="cmiCancel_Click" />
+            <Separator />
+            <MenuItem Name="cmiSendFromClipboard" Header="{x:Static lang:Lang.SendFromClipboard}" IsEnabled="False" Click="cmiSendFromClipboard_Click" />
+            <MenuItem Name="cmiTakeSSAndUpload" Header="{x:Static lang:Lang.TakeSSAndSend}" Click="cmiTakeSSAndUpload_Click" />
+            <Separator />
+            <MenuItem Name="cmiFtpAccounts" Header="{x:Static lang:Lang.FtpAccounts}">
+                <MenuItem Name="cmiNoFtpAccount" Header="{x:Static lang:Lang.NoFtpAccountFound}" IsEnabled="False" />
+                <Separator />
+                <MenuItem Name="cmiManageFtp" Header="{x:Static lang:Lang.Manage}" Click="cmiManageFtp_Click" />
+            </MenuItem>
+            <MenuItem Name="cmiUploadHistory" Header="{x:Static lang:Lang.UploadHistory}">
+                <MenuItem Name="cmiNoUrlFound" Header="{x:Static lang:Lang.NoUrlFound}" IsEnabled="False"  />
+                <Separator />
+                <MenuItem Name="cmiClearHistory" Header="{x:Static lang:Lang.Clear}" Click="cmiClearHistory_Click" />
+            </MenuItem>
+            <Separator />
+            <MenuItem Name="cmiSettings" Header="{x:Static lang:Lang.Settings}" Click="cmiSettings_Click" />
+            <MenuItem Name="cmiDisplay" Header="{x:Static lang:Lang.Display}">
+                <MenuItem Name="cmiTheme" Header="{x:Static lang:Lang.Theme}"/>
+                <MenuItem Name="cmiSize" Header="{x:Static lang:Lang.Size}">
+                    <MenuItem Name="cmiSize32" Header="32x32" Tag="32x32" Click="SizeClicked" />
+                    <MenuItem Name="cmiSize48" Header="48x48" Tag="48x48" Click="SizeClicked" />
+                    <MenuItem Name="cmiSize64" Header="64x64" Tag="64x64" Click="SizeClicked" />
+                    <MenuItem Name="cmiSize128" Header="128x128" Tag="128x128" Click="SizeClicked" />
+                </MenuItem>
+                <MenuItem Name="cmiOpacity" Header="{x:Static lang:Lang.Opacity}">
+                    <MenuItem Name="cmiOpacity1" Header="%20" Tag=",2" Click="OpacityClicked" />
+                    <MenuItem Name="cmiOpacity2" Header="%40" Tag=",4" Click="OpacityClicked" />
+                    <MenuItem Name="cmiOpacity3" Header="%60" Tag=",6" Click="OpacityClicked" />
+                    <MenuItem Name="cmiOpacity4" Header="%80" Tag=",8" Click="OpacityClicked" />
+                    <MenuItem Name="cmiOpacityClosed" Header="{x:Static lang:Lang.Closed}" Tag="1" Click="OpacityClicked" />
+                </MenuItem>
+                <Separator />
+                <MenuItem Name="cmiQuickFtpJump" Header="{x:Static lang:Lang.QuickFtpJump}" Click="cmiQuickFtpJump_Click" IsCheckable="True"/>
+                <MenuItem Name="cmiLockPosition" Header="{x:Static lang:Lang.LockPosition}" Click="cmiLockPosition_Click" IsCheckable="True" />
+                <MenuItem Name="cmiAlwaysOnTop" Header="{x:Static lang:Lang.AlwaysOnTop}" Click="cmiAlwaysOnTop_Click" IsCheckable="True" />
+            </MenuItem>
+            <Separator />
+            <MenuItem Name="cmiAbout" Header="{x:Static lang:Lang.About}" Click="cmiAbout_Click" />
+            <MenuItem Name="cmiHelp" Header="{x:Static lang:Lang.Help}" Click="cmiHelp_Click" />
+            <MenuItem Name="cmiCheckForUpdates" Header="{x:Static lang:Lang.CheckForUpdates}" Click="cmiCheckForUpdates_Click" />
+            <Separator />
+            <MenuItem Name="cmiExit" Header="{x:Static lang:Lang.Exit}" Click="cmiExit_Click" />
+        </ContextMenu>
+    </Window.ContextMenu>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="w:Commands.NIconDoubleClick" Executed="NIconDoubleClick_Executed" />
+    </Window.CommandBindings>
+    <Grid>
+        <tb:TaskbarIcon
+          x:Name="nIcon"
+          ToolTipText="dropf"
+            IconSource="/dropf;component/dropf.ico"
+            TrayBalloonTipClicked="nIcon_TrayBalloonTipClicked"
+            DoubleClickCommand="w:Commands.NIconDoubleClick">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="niShowHide" Header="{x:Static lang:Lang.Hide}" Click="niShowHide_Click" FontWeight="Bold" />
+                    <MenuItem Name="niResetPosition" Header="{x:Static lang:Lang.ResetPosition}" Click="niResetPosition_Click" />
+                    <Separator />
+                    <MenuItem Name="niGoToWebsite" Header="{x:Static lang:Lang.GoTodropfWebsite}" Click="niGoToWebsite_Click" />
+                    <!--MenuItem Name="niGoToDropfForum" Header="{x:Static lang:Lang.GoTodropfForum}" Click="niGoToDropfForum_Click" /-->
+                    <Separator />
+                    <MenuItem Header="{x:Static lang:Lang.Exit}" Click="cmiExit_Click" />
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+        <Image Margin="0" Name="imgMain" Width="128" Height="128" VerticalAlignment="Center" />
+        <ProgressBar Height="10" Name="pbUpload" Width="100" Visibility="Hidden" />
+        <Label HorizontalAlignment="Left" Margin="0" Name="lblUpload" VerticalAlignment="Top" Padding="2,1" FontSize="9" Visibility="Hidden" Background="#96FFFFFF" FontWeight="Bold" />
+        <Thumb Name="myThumb" Opacity="0" DragDelta="myThumb_DragDelta" AllowDrop="True" DragEnter="myThumb_DragEnter" DragLeave="myThumb_DragLeave" Drop="myThumb_Drop" Width="128" Height="128" DragCompleted="myThumb_DragCompleted" />
+        <TabControl Height="17" HorizontalAlignment="Left" Name="tcQuickFtp" Visibility="Hidden" Width="82" FontSize="9" Padding="0" Opacity="0.6" SelectionChanged="tcQuickFtp_SelectionChanged" Focusable="False">
+            <TabItem Header="1" Padding="4,1" />
+            <TabItem Header="2" Padding="4,1" />
+            <TabItem Header="3" Padding="4,1" />
+            <TabItem Header="4" Padding="4,1" />
+        </TabControl>
+    </Grid>
+</Window>

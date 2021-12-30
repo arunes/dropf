@@ -1,0 +1,32 @@
+$color-dropf: #29748F;
+$color-dropf-light      : #95CCEA;
+$color-dropf-extra-light: #C7E4EE;
+$color-dropf-dark       :#215b71;
+$color-dropf-extra-dark : #143745;
+
+$font-family : 'Pontano Sans';
+
+body {
+    background-color: $color-dropf;
+    margin          : 0;
+    padding         : 0;
+}
+
+br.clearfix {
+    clear : both;
+    height: 0;
+}
+
+a img {
+    vertical-align: middle;
+    border        : none;
+}
+
+@import "../components/header/header.scss";
+@import "../components/home/home.scss";
+@import "../components/footer/footer.scss";
+
+@import "../components/about/about.scss";
+@import "../components/license/license.scss";
+@import "../components/screen-shots/screen-shots.scss";
+@import "../components/version-history/version-history.scss";
